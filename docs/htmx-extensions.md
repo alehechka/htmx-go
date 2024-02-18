@@ -17,7 +17,7 @@ This extension adds client support for a new `Hx-Title` response header that whe
 #### Install
 
 ```html
-<script defer src="https://raw.githubusercontent.com/alehechka/htmx-go/latest/ext/title-header.js"></script>
+<script defer src="https://alehechka.github.io/htmx-go/ext/latest/title-header.js"></script>
 ```
 
 #### Usage
@@ -33,7 +33,7 @@ This extension adds client support for a new `Hx-Title` response header that whe
 This extension adds client support for a new `Hx-Icon` response header that when present will update the browser tab's `<link rel="icon" />` element's `href` attribute. This allows dynamic browser icons on HTTP responses. If the header is provided but with no content, the `href` will not be updated. If a `<link rel="icon">` element does not exist in the DOM, one will be created with the provided `href` from the response header.
 
 ```html
-<script defer src="https://raw.githubusercontent.com/alehechka/htmx-go/latest/ext/icon-header.js"></script>
+<script defer src="https://alehechka.github.io/htmx-go/ext/latest/icon-header.js"></script>
 ```
 
 #### Usage
