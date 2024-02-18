@@ -1,0 +1,19 @@
+name: Changelog
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+# Kill the workflow if the PR is updated with a new commit. Pushes to main will run sequentially.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  call-changelog-workflow:
+    name: Auto Releaser
+    uses: lockerstock/github-actions/.github/workflows/reusable-changelog.yaml@main
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN  }}
