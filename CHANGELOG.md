@@ -19,11 +19,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
-## [v0.2.0] - 2024-02-12
+## [v0.3.0] - 2024-02-18
 
 ### Added
 
-- Custom `htmx` extensions
+- GHA workflow to auto-release with changelog entries (https://github.com/alehechka/htmx-go/pull/4).
+- GHA workflow to publish semver tag extension scripts to GitHub Pages (https://github.com/alehechka/htmx-go/pull/4).
+
+## [v0.2.0] - 2024-02-18
+
+### Added
+
+- Custom `htmx` extensions (https://github.com/alehechka/htmx-go/pull/2).
   - `title-header`
   - `icon-header`
 
@@ -31,4 +38,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial Creation with `htmx` header constants.
+- Initial Creation with `htmx` header constants (https://github.com/alehechka/htmx-go/pull/1).
