@@ -19,4 +19,4 @@ jobs:
     name: Auto Releaser
     uses: lockerstock/github-actions/.github/workflows/reusable-changelog.yaml@main
     secrets:
-      token: ${{ secrets.GITHUB_TOKEN  }}
+      token: ${{ secrets.GHA_ACCESS_TOKEN  }}
