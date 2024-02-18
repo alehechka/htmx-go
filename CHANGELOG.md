@@ -19,12 +19,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
-## [v0.3.0] - 2023-02-18
+## [v0.3.0] - 2024-02-18
 
 ### Added
 
 - GHA workflow to auto-release with changelog entries (https://github.com/alehechka/htmx-go/pull/4).
-- GHA workflow to publish semver tag extension scripts to GitHub Pages
+- GHA workflow to publish semver tag extension scripts to GitHub Pages (https://github.com/alehechka/htmx-go/pull/4).
 
 ## [v0.2.0] - 2024-02-18
 
