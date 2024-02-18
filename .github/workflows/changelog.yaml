@@ -13,6 +13,9 @@ concurrency:
 
 jobs:
   call-changelog-workflow:
+    permissions:
+      contents: write
+
     name: Auto Releaser
     uses: lockerstock/github-actions/.github/workflows/reusable-changelog.yaml@main
     secrets:
