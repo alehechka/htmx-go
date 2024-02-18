@@ -1,0 +1,54 @@
+name: Publish GitHub Pages
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  publish-gh-pages:
+    name: Publish GitHub Pages
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Replace latest with extension scripts
+        run: |
+          rm -rf gh-pages/ext/latest
+          mkdir -p gh-pages/ext/latest/
+          cp ext/src/* gh-pages/ext/latest/
+
+      - name: Copy extension scripts into gh-pages tagged path
+        run: |
+          mkdir gh-pages/ext/${{ github.ref_name }}
+          cp ext/src/* gh-pages/ext/${{ github.ref_name }}
+
+      - name: Converts README Markdown to HTML
+        uses: jaywcjlove/markdown-to-html-cli@v3.5.3
+        with:
+          source: README.md
+          output: gh-pages/index.html
+
+      - name: Converts extensions Markdown to HTML
+        uses: jaywcjlove/markdown-to-html-cli@v3.5.3
+        with:
+          source: docs/htmx-extensions.md
+          output: gh-pages/ext/index.html
+
+      - name: Push changes to gh-pages
+        uses: EndBug/add-and-commit@v9
+        with:
+          cwd: gh-pages
+          message: "Update extension scripts from ${{ github.ref_name }}"
